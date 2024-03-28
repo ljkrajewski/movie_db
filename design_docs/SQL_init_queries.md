@@ -1,5 +1,3 @@
-Absolutely, here are the SQL queries to create the tables for your movie tracking database:
-
 **1. Movies Table:**
 
 ```sql
