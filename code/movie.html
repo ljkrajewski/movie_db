@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Database</title>
+</head>
+<body>
+  <h1>My Movie Collection</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Media Type</th>
+        <th>Length</th>
+        <th>IMDB Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie[1] }}</td>  <td>{{ movie[2] }}</td>  <td>{{ movie[3] }}</td>  <td>{{ movie[4] }}</td>  <td>{{ movie[5] if movie[5] else "-" }}</td>  </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
