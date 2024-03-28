@@ -5,16 +5,13 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Database connection details (replace with your actual credentials)
-dbname = "your_database_name"
-dbuser = "your_username"
-dbpassword = "your_password"
-dbhost = "localhost"  # or hostname/IP of your database server
+# Database path (replace with your actual database file path)
+db_path = "movies.db"  # Assuming your database file is named movies.db
 
 def connect_to_db():
-  """Connects to the PostgreSQL database."""
+  """Connects to the SQLite database."""
   try:
-      conn = psycopg2.connect(dbname=dbname, user=dbuser, password=dbpassword, host=dbhost)
+      conn = sqlite3.connect(db_path)
       return conn
   except Exception as e:
       print(f"Error connecting to database: {e}")
@@ -43,6 +40,7 @@ def movies_list():
 
 if __name__ == "__main__":
   app.run(debug=True)
+
 ```
 
 **Explanation:**
